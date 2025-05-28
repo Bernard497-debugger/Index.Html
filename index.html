@@ -79,4 +79,86 @@
   </script>
 
 </body>
+</html<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Khali Music Promo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #1db954;
+    }
+    .music-card {
+      background: #111;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+    }
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .ad-section {
+      margin-top: 30px;
+      padding: 15px;
+      background: #222;
+      border-radius: 8px;
+    }
+    .ad-section a {
+      color: #1db954;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Khali Music Promo</h1>
+
+  <div class="music-card">
+    <h3>Bernard Khalifa - Hustle Anthem</h3>
+    <audio id="audioPlayer" controls>
+      <source src="hustle.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <p id="status"></p>
+  </div>
+
+  <div class="ad-section">
+    <p>Sponsored by Monetag</p>
+    <a href="https://otieu.com/4/8665260" target="_blank">Click here to support</a>
+  </div>
+
+  <script>
+    const audio = document.getElementById("audioPlayer");
+    const status = document.getElementById("status");
+
+    audio.addEventListener('ended', () => {
+      status.textContent = "Playback finished.";
+    });
+
+    audio.addEventListener('error', () => {
+      status.textContent = "Error loading audio.";
+    });
+
+    audio.addEventListener('pause', () => {
+      if (!audio.ended) {
+        status.textContent = "Paused. Tap to continue.";
+      }
+    });
+  </script>
+
+</body>
 </html>
+>
